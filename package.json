@@ -1,0 +1,37 @@
+{
+  "name": "advancedjavascript",
+  "version": "1.0.0",
+  "description": "Esri Developer Summit: Advanced JavaScript Session",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/.bin/lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EsriDevelopmentSummit2017/AdvancedJavaScript.git"
+  },
+  "keywords": [
+    "esri",
+    "developer",
+    "summit",
+    "advanced",
+    "javascript",
+    "jeff",
+    "mcbride"
+  ],
+  "author": "Jeff McBride",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EsriDevelopmentSummit2017/AdvancedJavaScript/issues"
+  },
+  "homepage": "https://github.com/EsriDevelopmentSummit2017/AdvancedJavaScript#readme",
+  "dependencies": {
+    "angular": "^1.6.2",
+    "dojo": "^1.12.1",
+    "jquery": "^3.1.1"
+  },
+  "devDependencies": {
+    "lite-server": "^2.2.2"
+  }
+}
