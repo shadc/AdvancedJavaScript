@@ -54,7 +54,7 @@
 		`cd EsriDeveloperSummit`
 2.  Download Class Files
 	*  From Command Prompt / Terminal<br/> 
-		`git clone https://github.com/EsriDevelopmentSummit2017/AdvancedJavaScript`
+		`git clone https://github.com/EsriDevSummit2017/AdvancedJavaScript`
 3.  Install Class File Dependencies
 	*  From Command Prompt / Terminal<br/> 
 		`cd AdvancedJavaScript`<br/> 
