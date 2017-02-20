@@ -1,12 +1,16 @@
-> # **Esri Development Summit: Advanced JavaScript**
+> # **Esri Developer Summit: Advanced JavaScript**
 > ## **Dates: March 5th - 6th, 2017<br/>Instructor: Jeff McBride<br/>Instructor E-Mail: jeff@geeklearn.com**
 
 ### **Setup Requirements**
 
 1.  Web browser
-	* Latest version of Google Chrome will be used due to it's support for ECMAScript 2015 & 2016
-2.  An IDE (Integrated Development Environment) or code editor of your choice
-	* An IDE or text editor that helps with JavaScript syntax, such as Visual Studio, Visual Studio Code, Sublime Text, WebStorm, Atom, or Brackets.
+	* Please install the latest version of Google Chrome, in order to get the best support for ECMAScript 2015 & 2016.
+2.  An IDE (Integrated Development Environment) or code editor that helps with JavaScript syntax – any one of the following would be fine for class:
+	* Visual Studio Code (http://code.visualstudio.com/)
+	* Sublime Text (https://www.sublimetext.com/3)
+	* WebStorm (https://www.jetbrains.com/webstorm/)
+	* Atom (https://atom.io/)
+	* Brackets (http://brackets.io/)
 3.  Git
 	* Git will be used to download course files and optionally version control for student code
 	* See download and install steps below
@@ -15,7 +19,7 @@
 	* npm (node.js package manager) will be used to install course dependencies and to start the development environment
 	* See download and install steps below
 5.  Course Files
-	* Course files contain development environment dependencies, example code, reference images and links that will be used during classroom
+	* Course files contain development environment dependencies, example code, reference images and links that will be used during class
 	* See download and install steps below
 
 ### **Other required items for the classroom**	
@@ -38,7 +42,7 @@
 	    `git --version`
 
 ### **Download and Install node.js**
-1.  Download node.js
+1.  Download node.js (any recent version 6.x or later is fine)
 	*  https://nodejs.org/en/download/
 2.  Install node.js
 	*  Install node.js accepting all defaults

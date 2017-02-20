@@ -1,4 +1,4 @@
-> # **Esri Development Summit: Advanced JavaScript**
+> # **Esri Developer Summit: Advanced JavaScript**
 > ## **Dates: March 5th - 6th, 2017<br/>Instructor: Jeff McBride<br/>Instructor E-Mail: jeff@geeklearn.com**
 
 ## **Course Outline**
