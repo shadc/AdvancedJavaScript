@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Esri Developer Summit: Advanced JavaScript Session</title>
+	<script src="main.js"></script>
+
+</head>
+
+<body>
+	<h1>Esri Developer Summit: Advanced JavaScript Session</h1>
+	<h2>
+		Dates: March 5-6, 2017<br/> Instructor: Jeff McBride<br/> Instructor E-Mail: jeff@geeklearn.com<br/>
+	</h2>
+	<h3>Module 07 - Preparing for JavaScript Frameworks</h3>
+	Please open JavaScript console log in your browser developer tools.
+
+	<h4>jQuery Form Validation</h4>
+	<form id="contactForm" method="post" action="">
+		<!-- Name -->
+		<div>
+			<label for="contactName">Name:</label>
+			<input type="text" id="contactName" name="Name"></input>
+			<span class="error">This field is required</span>
+		</div>
+		<!-- Email -->
+		<div>
+			<label for="contactEMail">Email:</label>
+			<input type="email" id="contactEMail" name="EMail"></input>
+			<span class="error">A valid email address is required</span>
+		</div>
+		<!-- Submit Button -->
+		<div id="contactSubmit">
+			<button type="Submit">Submit</button>
+		</div>
+	</form>
+
+	<style>
+		#contactForm label 	{ display: inline-block; width: 100px; text-align: right; }
+		#contactSubmit 		{ padding-left: 100px; }
+		#contactForm div 	{ margin-top: 1em; }
+		.error 				{ display: none; margin-left: 10px; }
+		.errorShow 			{ color: red; margin-left: 10px; }
+		input.invalid 		{ border: 2px solid red; }
+		input.valid 		{ border: 2px solid green; }
+	</style>
+
+	<script src="/node_modules/jquery/dist/jquery.js"></script>
+	<script>
+		$(document).ready(function () {
+			$("#contactName").on("input", function () {
+				if ($(this).val()) { $(this).removeClass("invalid").addClass("valid"); }
+				else { $(this).removeClass("valid").addClass("invalid"); }
+			});
+
+			$("#contactEMail").on("input", function () {
+				var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+				if (re.test($(this).val())) { $(this).removeClass("invalid").addClass("valid"); }
+				else { $(this).removeClass("valid").addClass("invalid"); }
+			});
+
+			$("#contactSubmit button").click(function (event) {
+				var formData = $("#contactForm").serializeArray();
+				var errorFree = true;
+
+				for (var input in formData) {
+					var element = $("#contact" + formData[input]['name']);
+					var valid = element.hasClass("valid");
+					var errorElement = $("span", element.parent());
+					
+					if (!valid) { 
+						errorElement.removeClass("error").addClass("errorShow"); 
+						errorFree = false; 
+					}
+					else { errorElement.removeClass("errorShow").addClass("error"); }
+				}
+				if (!errorFree) { event.preventDefault(); }
+				else { alert('No errors: Form will be submitted'); }
+			});
+		});
+
+		// Note: Using validation plugins for jQuery is a more powerful options
+		//		https://jqueryvalidation.org/
+	</script>
+</body>
+
+</html>

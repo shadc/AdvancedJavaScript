@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Esri Developer Summit: Advanced JavaScript Session</title>
+	<script src="main.js"></script>
+
+</head>
+
+<body>
+	<h1>Esri Developer Summit: Advanced JavaScript Session</h1>
+	<h2>
+		Dates: March 5-6, 2017<br/> Instructor: Jeff McBride<br/> Instructor E-Mail: jeff@geeklearn.com<br/>
+	</h2>
+	<h3>Module 07 - Preparing for JavaScript Frameworks</h3>
+	Please open JavaScript console log in your browser developer tools.
+
+	<h4>jQuery CSS and DOM Manipulation</h4>
+	<div id="jqueryDiv"></div>
+
+	<style>
+		.hoverOver  { color: blue; font-weight: bold; }
+	</style>
+
+	<script src="//code.jquery.com/jquery-3.1.1.js"></script>
+	<script>
+		$(document).ready(function () {
+			var newElement = $("<p>New Element added by jQuery</p>");
+			newElement.appendTo("#jqueryDiv");
+
+			$("#jqueryDiv").hover(
+				() => $("#jqueryDiv").addClass("hoverOver"), 
+				() => $("#jqueryDiv").removeClass("hoverOver")
+			);	
+		});
+	</script>
+</body>
+
+</html>
