@@ -11,6 +11,8 @@
 console.log("");
 console.log("*** Promises ***");
 
+// Note: PromiseStatus: pending, resolved / settled, fullfilled, rejected
+//      https://github.com/domenic/promises-unwrapping/blob/master/docs/states-and-fates.md
 function loadData(url) {
     return new Promise(function(resolve, reject) {
         var request = new XMLHttpRequest(); 
@@ -42,5 +44,34 @@ function showData(response) {
     console.log(obj);                                                                   // Object {firstName: "Fred", lastName: "Flintstone", kind: "Person"}
 }
 
-console.log("Loading..."); 
 loadData("fred.json").then(response => showData(response), error => console.log(error));
+
+
+// Chaining Promises
+loadData("Data/Level1.json")
+    .then(response => JSON.parse(response))                 // can be shortcuted (see 2 lines lower)  
+    .then(response => loadData("Data/" + response[0] + ".json"))
+    .then(JSON.parse)                                       // Shortcut because it takes in a single parameter which is assumed to be response from previous step
+    .then(console.log)
+    .catch(console.log);
+
+
+// Promise.all() - The long way
+loadData("Data/Level1.json")
+    .then(JSON.parse)
+    .then(response => {
+            let promises = response.map(value => loadData("Data/" + value + ".json"));
+            console.log(promises);
+
+            var results = Promise.all(promises);            // Alternative to all() is race() which resolves after first promise succeeds or rejects
+            console.log(results);
+
+            results.then(console.log);
+        })
+    .catch(console.log);
+
+// Promise.all() - The concise way
+loadData("Data/Level1.json")
+    .then(JSON.parse)
+    .then(response => Promise.all(response.map(value => loadData("Data/" + value + ".json"))).then(console.log))
+    .catch(console.log);
