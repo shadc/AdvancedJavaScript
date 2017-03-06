@@ -8,3 +8,11 @@ function loadJS(file) {
     newScript.src = "Working/" + file;
     document.getElementsByTagName('head')[0].appendChild(newScript);
 }
+
+class Student6 extends Person6 {
+    constructor(firstName, lastName, grade) {
+        super(firstName, lastName);
+        this.grade = grade;
+    }
+    name() { return super.name() + " has a " + this.grade }
+}

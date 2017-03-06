@@ -4,7 +4,7 @@
   "description": "Esri Developer Summit: Advanced JavaScript Session",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel": "babel --presets es2015 Day2/Module05AJAXAndXMLHttpRequest/Code/main.js -o build/main.bundle.js",
     "start": "./node_modules/.bin/lite-server"
   },
   "repository": {
@@ -32,6 +32,9 @@
     "jquery": "^3.1.1"
   },
   "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-core": "^6.23.1",
+    "babel-preset-es2015": "^6.22.0",
     "lite-server": "^2.2.2"
   }
 }
