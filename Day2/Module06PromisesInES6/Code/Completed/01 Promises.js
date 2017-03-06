@@ -44,7 +44,7 @@ function showData(response) {
     console.log(obj);                                                                   // Object {firstName: "Fred", lastName: "Flintstone", kind: "Person"}
 }
 
-loadData("fred.json").then(response => showData(response), error => console.log(error));
+loadData("Data/fred.json").then(response => showData(response), error => console.log(error));
 
 
 // Chaining Promises
