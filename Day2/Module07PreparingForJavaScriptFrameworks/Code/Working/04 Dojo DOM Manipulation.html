@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Esri Developer Summit: Advanced JavaScript Session</title>
+
+</head>
+
+<body>
+	<h1>Esri Developer Summit: Advanced JavaScript Session</h1>
+	<h2>
+		Dates: March 5-6, 2017<br/> Instructor: Jeff McBride<br/> Instructor E-Mail: jeff@geeklearn.com<br/>
+	</h2>
+	<h3>Module 07 - Preparing for JavaScript Frameworks</h3>
+	Please open JavaScript console log in your browser developer tools.
+
+	<div id="dojoDiv"></div>
+
+	<style>
+		.hoverOver  { color: blue; font-weight: bold; }
+	</style>
+
+ 	<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js" data-dojo-config="async: true"></script>
+    <script>
+		require(["dojo/dom", "dojo/dom-construct", "dojo/mouse", "dojo/dom-class", "dojo/on", "dojo/domReady!"],
+			function(dom, domConstruct, mouse, domClass, on) {
+				domConstruct.create("p", { innerHTML: "New Element added by Dojo"}, dom.byId("dojoDiv"));
+
+				on(dom.byId("dojoDiv"), mouse.enter, function() {
+					domClass.add("dojoDiv", "hoverOver");
+				});
+
+				on(dom.byId("dojoDiv"), mouse.leave, function(){
+					domClass.remove("dojoDiv", "hoverOver");
+				});
+			}
+		);
+    </script>
+</body>
+
+</html>
